@@ -1,0 +1,46 @@
+<header id="header" class="header dark-background d-flex flex-column" [ngClass]="{'header-show': isNavVisible()}">
+    <i class="header-toggle d-xl-none bi bi-list" [class.bi-x]="isNavVisible()" (click)="toggleNav()"></i>
+
+    <div class="profile-img">
+        <img src="./assets/img/home/mikusgyula_self_1.jpg" alt="mikusgyula" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="#" class="logo d-flex align-items-center justify-content-center">
+        <h1 class="sitename fs-1">Mikus Gyula</h1>
+    </a>
+    <span class="text-center mb-3">Virtuális galéria és emlékoldal</span>
+
+    <nav id="navmenu" class="navmenu">
+        <ul>
+
+            <li>
+                <a href="#hero" class="active">
+                    <i class="bi bi-house navicon"></i>Kezdőoldal
+                </a>
+            </li>
+            <li class="">
+                <a href="#news" class=""><i class="bi bi-newspaper navicon"></i>
+                    <span class="pe-3 position-relative">
+                        Hírek
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill highlighted">
+                            1
+                            <span class="visually-hidden">aktuális híreink</span>
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li><a href="#about"><i class="bi bi-person navicon"></i> Életrajz</a></li>
+            <li><a href="#prizes"><i class="bi bi-award navicon"></i> Elismerései</a></li>
+            <li><a href="#services"><i class="bi bi-piggy-bank navicon"></i> Gyűjtés</a></li>
+            <li><a href="#galeria"><i class="bi bi-images navicon"></i> Galéria</a></li>
+            
+            <hr>
+            <li><a href="#" [routerLink]="['/muszak']" routerLinkActive="router-link-active"><i
+                        class="bi bi-hdd-stack navicon"></i> MŰSZAK</a></li>
+            <li><a href="https://balatonimuzeum.hu/"><i class="bi bi-hdd-stack navicon"></i> Balatoni Múzeum</a></li>
+
+            <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+</header>

@@ -1,0 +1,71 @@
+<main class="main">
+
+    <div class="page-title dark-background">
+        <div class="container d-lg-flex justify-content-between align-items-center">
+            <h1 class="mb-2 mb-lg-0">{{artwork?.title}}</h1>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a [routerLink]="['/', 'galeria']" [fragment]="''+artwork!.id" routerLinkActive="router-link-active" >Galéria</a></li>
+                    <li class="current">{{artwork?.title}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider">
+
+                        <div class="align-items-center">
+
+                            <div class="">
+                                <img src="./assets/img/{{artwork?.imgPath}}" alt="{{artwork?.title}}">
+                            </div>
+
+                            <!-- <div class="swiper-slide">
+                                <img src="assets/img/portfolio/product-1.jpg" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="assets/img/portfolio/branding-1.jpg" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="assets/img/portfolio/books-1.jpg" alt="">
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Az alkotásról</h3>
+                        <ul>
+                            <li><strong>Kategória</strong>: {{CategoryTitle[artwork!.category]}}</li>
+                            <li><strong>Év</strong>: {{artwork?.year}}</li>
+                            <li><strong>Leírás</strong>: {{artwork?.description}}</li>
+                            <li><strong>Becsült érték</strong>: ismeretlen</li>
+                            <li><strong>Méret</strong>: ismeretlen</li>
+                            <li><strong>Anyag</strong>: {{artwork?.materials || 'ismeretlen'}}</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                        <h2>{{artwork?.title}}</h2>
+                        @if (artwork?.story) {
+                            <div [innerHTML]="sanitizedStory"></div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</main>

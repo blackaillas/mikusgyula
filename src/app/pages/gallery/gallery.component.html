@@ -1,0 +1,60 @@
+<main class="main">
+    <section id="portfolio" class="portfolio section">
+
+
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Galéria</h2>
+            <p>Betekintést nyújtunk a festő életművébe, megőrizve művészetének varázsát és egyediségét. Bár
+                alkotásainak teljes listája nem ismert, itt bemutatjuk azokat a festményeket, grafikákat és szobrokat,
+                amelyek
+                fennmaradtak, kiállításokon szerepeltek vagy magángyűjteményekben megtalálhatók.
+            </p>
+            <p> Fedezze fel a színek, fények és kompozíciók harmóniáját, amely minden ecsetvonásban tükrözi a művész
+                egyedi látásmódját és érzékenységét!</p>
+        </div>
+
+        <div class="container">
+
+            <div>
+
+                <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">Összes</li>
+                <li data-filter=".filter-Tajkep">Tájkép</li>
+                <li data-filter=".filter-Eletkep">Életkép</li>
+                <li data-filter=".filter-Csendelet">Csendélet</li>
+                <li data-filter=".filter-Akt">Akt</li>
+                <li data-filter=".filter-Portre">Portré</li>
+                <li data-filter=".filter-Vazlat">Vázlat</li>
+                <li data-filter=".filter-Szobor">Szobor</li>
+            </ul> -->
+
+                <div class="row gy-4 " data-masonry='{"percentPosition": true }' data-aos="fade-up"
+                    data-aos-delay="200">
+
+                    @for(item of items; track item.id) {
+                    <div [id]="item.id" class="col-lg-4 col-md-6 portfolio-item filter-{{item.category}}">
+                        <div class="portfolio-content h-100">
+                            <img appLazyLoad="./assets/img/{{item.imgPath}}" class="img-fluid w-100" alt="{{item.title}}"
+                                loading="lazy" >
+                            <div class="portfolio-info">
+                                <h4>{{item.title}}</h4>
+                                @if(!!item.description) {
+                                    <p class="p-2">{{item.description}}</p>
+                                }
+                                <a href="./assets/img/{{item.imgPath}}" title="{{item.title}}"
+                                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                @if(!!item.story) {
+                                <a [routerLink]="['/', 'galeria', item.id]" routerLinkActive="router-link-active"
+                                    title="Részletek" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
