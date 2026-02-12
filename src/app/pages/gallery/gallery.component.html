@@ -1,7 +1,5 @@
 <main class="main">
     <section id="portfolio" class="portfolio section">
-
-
         <div class="container section-title" data-aos="fade-up">
             <h2>Galéria</h2>
             <p>Betekintést nyújtunk a festő életművébe, megőrizve művészetének varázsát és egyediségét. Bár
@@ -14,47 +12,43 @@
         </div>
 
         <div class="container">
-
-            <div>
-
-                <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter="*" class="filter-active">Összes</li>
-                <li data-filter=".filter-Tajkep">Tájkép</li>
-                <li data-filter=".filter-Eletkep">Életkép</li>
-                <li data-filter=".filter-Csendelet">Csendélet</li>
-                <li data-filter=".filter-Akt">Akt</li>
-                <li data-filter=".filter-Portre">Portré</li>
-                <li data-filter=".filter-Vazlat">Vázlat</li>
-                <li data-filter=".filter-Szobor">Szobor</li>
-            </ul> -->
-
-                <div class="row gy-4 " data-masonry='{"percentPosition": true }' data-aos="fade-up"
-                    data-aos-delay="200">
-
-                    @for(item of items; track item.id) {
-                    <div [id]="item.id" class="col-lg-4 col-md-6 portfolio-item filter-{{item.category}}">
-                        <div class="portfolio-content h-100">
-                            <img appLazyLoad="./assets/img/{{item.imgPath}}" class="img-fluid w-100" alt="{{item.title}}"
-                                loading="lazy" >
-                            <div class="portfolio-info">
-                                <h4>{{item.title}}</h4>
-                                @if(!!item.description) {
-                                    <p class="p-2">{{item.description}}</p>
-                                }
-                                <a href="./assets/img/{{item.imgPath}}" title="{{item.title}}"
-                                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                        class="bi bi-zoom-in"></i></a>
-                                @if(!!item.story) {
-                                <a [routerLink]="['/', 'galeria', item.id]" routerLinkActive="router-link-active"
-                                    title="Részletek" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                                }
-                            </div>
+            <div class="masonry-grid" #galleryContainer data-aos="fade-up" data-aos-delay="200">
+                @for(item of displayedItems; track item.id) {
+                <div [id]="'item-' + item.id" class="portfolio-item filter-{{item.category}}">
+                    <div class="portfolio-content">
+                        <img appLazyLoad="./assets/img/{{item.imgPath}}" 
+                             (imageLoaded)="onImageLoad()"
+                             class="img-fluid gallery-image" 
+                             alt="{{item.title}}"
+                             loading="lazy">
+                        <div class="portfolio-info">
+                            <h4>{{item.title}}</h4>
+                            @if(!!item.description) {
+                                <p class="p-2">{{item.description}}</p>
+                            }
+                            <a href="./assets/img/{{item.imgPath}}" title="{{item.title}}"
+                                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            @if(!!item.story) {
+                            <a [routerLink]="['/', 'galeria', item.id]" routerLinkActive="router-link-active"
+                                title="Részletek" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            }
                         </div>
                     </div>
-                    }
+                </div>
+                }
+            </div>
 
+            @if(hasMoreItems) {
+            <div id="load-more-trigger" class="load-more-trigger">
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Betöltés...</span>
+                    </div>
+                    <p class="mt-2">További képek betöltése...</p>
                 </div>
             </div>
+            }
         </div>
     </section>
 </main>
