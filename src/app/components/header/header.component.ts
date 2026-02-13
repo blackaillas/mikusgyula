@@ -15,4 +15,8 @@ export class HeaderComponent {
     this.isNavVisible.set(!this.isNavVisible());
   }
 
+  closeNav() {
+    this.isNavVisible.set(false);
+  }
+
 }

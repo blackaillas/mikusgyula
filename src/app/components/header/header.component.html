@@ -5,7 +5,7 @@
         <img src="./assets/img/home/mikusgyula_self_1.jpg" alt="mikusgyula" class="img-fluid rounded-circle">
     </div>
 
-    <a href="#" class="logo d-flex align-items-center justify-content-center">
+    <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
         <h1 class="sitename fs-1">Mikus Gyula</h1>
     </a>
     <span class="text-center mb-3">Virtuális galéria és emlékoldal</span>
@@ -14,12 +14,12 @@
         <ul>
 
             <li>
-                <a href="#hero" class="active">
+                <a [routerLink]="['/']" fragment="hero" class="active" (click)="closeNav()">
                     <i class="bi bi-house navicon"></i>Kezdőoldal
                 </a>
             </li>
             <li class="">
-                <a href="#news" class=""><i class="bi bi-newspaper navicon"></i>
+                <a [routerLink]="['/']" fragment="news" (click)="closeNav()"><i class="bi bi-newspaper navicon"></i>
                     <span class="pe-3 position-relative">
                         Hírek
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill highlighted">
@@ -29,17 +29,17 @@
                     </span>
                 </a>
             </li>
-            <li><a href="#about"><i class="bi bi-person navicon"></i> Életrajz</a></li>
-            <li><a href="#prizes"><i class="bi bi-award navicon"></i> Elismerései</a></li>
-            <li><a href="#services"><i class="bi bi-piggy-bank navicon"></i> Gyűjtés</a></li>
-            <li><a href="#galeria"><i class="bi bi-images navicon"></i> Galéria</a></li>
+            <li><a [routerLink]="['/']" fragment="about" (click)="closeNav()"><i class="bi bi-person navicon"></i> Életrajz</a></li>
+            <li><a [routerLink]="['/']" fragment="prizes" (click)="closeNav()"><i class="bi bi-award navicon"></i> Elismerései</a></li>
+            <li><a [routerLink]="['/']" fragment="services" (click)="closeNav()"><i class="bi bi-piggy-bank navicon"></i> Gyűjtés</a></li>
+            <li><a [routerLink]="['/']" fragment="galeria" (click)="closeNav()"><i class="bi bi-images navicon"></i> Galéria</a></li>
             
             <hr>
-            <li><a href="#" [routerLink]="['/muszak']" routerLinkActive="router-link-active"><i
+            <li><a [routerLink]="['/muszak']" routerLinkActive="router-link-active" (click)="closeNav()"><i
                         class="bi bi-hdd-stack navicon"></i> MŰSZAK</a></li>
-            <li><a href="https://balatonimuzeum.hu/"><i class="bi bi-hdd-stack navicon"></i> Balatoni Múzeum</a></li>
+            <li><a href="https://balatonimuzeum.hu/" target="_blank"><i class="bi bi-hdd-stack navicon"></i> Balatoni Múzeum</a></li>
 
-            <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Kapcsolat</a></li>
+            <li><a [routerLink]="['/']" fragment="contact" (click)="closeNav()"><i class="bi bi-envelope navicon"></i> Kapcsolat</a></li>
         </ul>
     </nav>
 
