@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href /mikusgyula/",
+    "deploy": "ng build --configuration production --base-href /mikusgyula/ && npx angular-cli-ghpages --dir=dist/mikusgyula/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -29,6 +31,7 @@
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.4",
     "@types/jasmine": "^6.0.0",
+    "angular-cli-ghpages": "^3.0.2",
     "jasmine-core": "^6.0.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
