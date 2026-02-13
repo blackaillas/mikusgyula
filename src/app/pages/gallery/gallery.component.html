@@ -16,11 +16,9 @@
                 @for(item of displayedItems; track item.id) {
                 <div [id]="'item-' + item.id" class="portfolio-item filter-{{item.category}}">
                     <div class="portfolio-content">
-                        <img appLazyLoad="./assets/img/{{item.imgPath}}" 
-                             (imageLoaded)="onImageLoad()"
+                        <img [src]="'./assets/img/' + item.imgPath"
                              class="img-fluid gallery-image" 
-                             alt="{{item.title}}"
-                             loading="lazy">
+                             alt="{{item.title}}">
                         <div class="portfolio-info">
                             <h4>{{item.title}}</h4>
                             @if(!!item.description) {
@@ -40,13 +38,17 @@
             </div>
 
             @if(hasMoreItems) {
-            <div id="load-more-trigger" class="load-more-trigger">
-                <div class="text-center py-4">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Betöltés...</span>
-                    </div>
-                    <p class="mt-2">További képek betöltése...</p>
-                </div>
+            <div class="text-center py-5">
+                <button class="btn btn-primary btn-lg" 
+                        (click)="loadMoreItems()" 
+                        [disabled]="isLoading">
+                    @if(isLoading) {
+                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                        Betöltés...
+                    } @else {
+                        További képek betöltése
+                    }
+                </button>
             </div>
             }
         </div>
