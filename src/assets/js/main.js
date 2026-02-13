@@ -98,7 +98,12 @@
           itemSelector: '.isotope-item',
           layoutMode: layout,
           filter: filter,
-          sortBy: sort
+          sortBy: sort,
+          percentPosition: true,
+          masonry: {
+            columnWidth: '.isotope-item',
+            gutter: 0
+          }
         });
       });
 
