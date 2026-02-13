@@ -37,7 +37,10 @@
             <hr>
             <li><a [routerLink]="['/muszak']" routerLinkActive="router-link-active" (click)="closeNav()"><i
                         class="bi bi-hdd-stack navicon"></i> MŰSZAK</a></li>
-            <li><a href="https://balatonimuzeum.hu/" target="_blank"><i class="bi bi-hdd-stack navicon"></i> Balatoni Múzeum <i class="bi bi-box-arrow-up-right ms-1"></i></a></li>
+            <li><a href="https://balatonimuzeum.hu/" target="_blank" class="d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-hdd-stack navicon"></i> Balatoni Múzeum</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+            </a></li>
 
             <li><a [routerLink]="['/']" fragment="contact" (click)="closeNav()"><i class="bi bi-envelope navicon"></i> Kapcsolat</a></li>
         </ul>
